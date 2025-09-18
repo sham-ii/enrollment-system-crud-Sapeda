@@ -1,0 +1,32 @@
+/* style.css */
+
+body {
+  background-color: #fff0f5; /* soft lavender-pink background */
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background-color: #ffc0cb; /* soft pink card */
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background-color: #ff69b4; /* hot pink button */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #ff85c1; /* lighter pink on hover */
+}
+
+h1, h5 {
+  color: #d63384; /* dark pink header */
+}

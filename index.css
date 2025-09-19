@@ -1,12 +1,10 @@
-/* style.css */
-
 body {
-  background-color: #fff0f5; /* soft lavender-pink background */
+  background-color: #fff0f5; 
   font-family: Arial, sans-serif;
 }
 
 .card {
-  background-color: #ffc0cb; /* soft pink card */
+  background-color: #ffc0cb; 
   color: #333;
   border: none;
   border-radius: 15px;
@@ -19,14 +17,14 @@ body {
 }
 
 .btn-primary {
-  background-color: #ff69b4; /* hot pink button */
+  background-color: #ff69b4; 
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #ff85c1; /* lighter pink on hover */
+  background-color: #ff85c1; 
 }
 
 h1, h5 {
-  color: #d63384; /* dark pink header */
+  color: #d63384; 
 }

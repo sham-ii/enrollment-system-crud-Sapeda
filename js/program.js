@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", loadPrograms);
 
-// Alert function
 function showAlert(message, type = 'success') {
   const alertContainer = document.getElementById('alertContainer');
   alertContainer.innerHTML = `
@@ -12,7 +11,6 @@ function showAlert(message, type = 'success') {
   setTimeout(() => { alertContainer.innerHTML = ''; }, 3000);
 }
 
-// Load programs and display in table
 function loadPrograms() {
   fetch("API/Programs/getPrograms.php")
     .then(res => res.json())
@@ -34,7 +32,6 @@ function loadPrograms() {
     });
 }
 
-// Handle Add/Update Program
 document.getElementById("programForm").addEventListener("submit", function(e) {
   e.preventDefault();
   let formData = new FormData(this);
@@ -57,13 +54,11 @@ document.getElementById("programForm").addEventListener("submit", function(e) {
     });
 });
 
-// Edit program
 function editProgram(id, name) {
   document.getElementById("program_id").value = id;
   document.getElementById("program_name").value = name;
 }
 
-// Delete program
 function deleteProgram(id) {
   if (!confirm("Delete this program?")) return;
   let fd = new FormData();

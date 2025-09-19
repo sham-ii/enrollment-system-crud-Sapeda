@@ -57,7 +57,6 @@ document.getElementById("studentForm").addEventListener("submit", function(e) {
     });
 });
 
-
 function editStudent(id, lname, fname, mname, prog, allow) {
   document.getElementById("stud_id").value = id;
   document.getElementById("last_name").value = lname;

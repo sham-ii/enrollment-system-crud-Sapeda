@@ -4,13 +4,11 @@ include "../db.php";
 $from = $_POST['year_from'];
 $to   = $_POST['year_to'];
 
-// Validation 1: year_from must be less than year_to
 if ($from >= $to) {
     echo "error: Year From must be less than Year To";
     exit;
 }
 
-// Validation 2: prevent duplicate ranges
 $check = $conn->prepare("SELECT * FROM year_tbl WHERE year_from = ? AND year_to = ?");
 $check->bind_param("ii", $from, $to);
 $check->execute();
@@ -21,7 +19,6 @@ if ($result->num_rows > 0) {
     exit;
 }
 
-// Insert if valid
 $sql = $conn->prepare("INSERT INTO year_tbl (year_from, year_to) VALUES (?, ?)");
 $sql->bind_param("ii", $from, $to);
 

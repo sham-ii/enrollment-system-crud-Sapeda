@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", loadYears);
 
-// Alert function
 function showAlert(message, type = 'success') {
   const alertContainer = document.getElementById('alertContainer');
   alertContainer.innerHTML = `
@@ -12,7 +11,6 @@ function showAlert(message, type = 'success') {
   setTimeout(() => { alertContainer.innerHTML = ''; }, 3000);
 }
 
-// Load Years
 function loadYears() {
   fetch("API/Years/getYears.php")
     .then(res => res.json())
@@ -34,7 +32,6 @@ function loadYears() {
     });
 }
 
-// Add/Update Year
 document.getElementById("yearForm").addEventListener("submit", function(e) {
   e.preventDefault();
   let formData = new FormData(this);
@@ -56,14 +53,12 @@ document.getElementById("yearForm").addEventListener("submit", function(e) {
     });
 });
 
-// Edit Year
 function editYear(id, from, to) {
   document.getElementById("year_id").value = id;
   document.getElementById("year_from").value = from;
   document.getElementById("year_to").value = to;
 }
 
-// Delete Year
 function deleteYear(id) {
   if (!confirm("Delete this year?")) return;
   let fd = new FormData();

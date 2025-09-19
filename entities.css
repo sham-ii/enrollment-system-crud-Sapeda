@@ -1,12 +1,10 @@
-/* style.css - Shared for all entity pages */
-
 body {
-  background-color: #fff0f5; /* soft lavender-pink background */
+  background-color: #fff0f5; 
   font-family: Arial, sans-serif;
 }
 
 h1, h2, h5 {
-  color: #d63384; /* dark pink headers */
+  color: #d63384; 
 }
 
 .form-control, .form-select {
@@ -15,13 +13,13 @@ h1, h2, h5 {
 }
 
 button.btn-primary, a.btn-primary {
-  background-color: #ff69b4; /* hot pink button */
+  background-color: #ff69b4; 
   border: none;
   transition: background-color 0.2s;
 }
 
 button.btn-primary:hover, a.btn-primary:hover {
-  background-color: #ff85c1; /* lighter pink on hover */
+  background-color: #ff85c1; 
 }
 
 a.btn-secondary {
@@ -36,7 +34,7 @@ a.btn-secondary:hover {
 }
 
 .table {
-  background-color: #ffe4ec; /* soft pink table background */
+  background-color: #ffe4ec; 
   border-radius: 10px;
 }
 

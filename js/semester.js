@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", loadSemesters);
 
-// Alert function
 function showAlert(message, type = 'success') {
   const alertContainer = document.getElementById('alertContainer');
   alertContainer.innerHTML = `
@@ -12,7 +11,6 @@ function showAlert(message, type = 'success') {
   setTimeout(() => { alertContainer.innerHTML = ''; }, 3000);
 }
 
-// Load semesters and display in table
 function loadSemesters() {
   fetch("API/Semesters/getSemesters.php")
     .then(res => res.json())
@@ -34,7 +32,6 @@ function loadSemesters() {
     });
 }
 
-// Handle Add/Update Semester
 document.getElementById("semesterForm").addEventListener("submit", function(e) {
   e.preventDefault();
   let formData = new FormData(this);
@@ -57,14 +54,12 @@ document.getElementById("semesterForm").addEventListener("submit", function(e) {
     });
 });
 
-// Edit Semester
 function editSemester(sem_id, sem_name, year_id) {
   document.getElementById("sem_id").value = sem_id;
   document.getElementById("sem_name").value = sem_name;
   document.getElementById("year_id").value = year_id;
 }
 
-// Delete Semester
 function deleteSemester(id) {
   if (!confirm("Delete this semester?")) return;
   let fd = new FormData();

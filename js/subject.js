@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", loadSubjects);
 
-// Alert function
 function showAlert(message, type = 'success') {
   const alertContainer = document.getElementById('alertContainer');
   alertContainer.innerHTML = `
@@ -12,7 +11,6 @@ function showAlert(message, type = 'success') {
   setTimeout(() => { alertContainer.innerHTML = ''; }, 3000);
 }
 
-// Load subjects and display in table
 function loadSubjects() {
   fetch("API/Subjects/getSubjects.php")
     .then(res => res.json())
@@ -34,7 +32,6 @@ function loadSubjects() {
     });
 }
 
-// Handle Add/Update
 document.getElementById("subjectForm").addEventListener("submit", function(e) {
   e.preventDefault();
   let formData = new FormData(this);
@@ -57,14 +54,12 @@ document.getElementById("subjectForm").addEventListener("submit", function(e) {
     });
 });
 
-// Edit Subject
 function editSubject(subject_id, subject_name, sem_id) {
   document.getElementById("subject_id").value = subject_id;
   document.getElementById("subject_name").value = subject_name;
   document.getElementById("sem_id").value = sem_id;
 }
 
-// Delete Subject
 function deleteSubject(id) {
   if (!confirm("Delete this subject?")) return;
   let fd = new FormData();

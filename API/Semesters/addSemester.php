@@ -6,18 +6,15 @@ $sem_name = $_POST["sem_name"] ?? "";
 $year_from = $_POST["year_from"] ?? null;
 $year_to   = $_POST["year_to"] ?? null;
 
-// Check if year_id exists
 $checkYear = $conn->prepare("SELECT * FROM year_tbl WHERE year_id = ?");
 $checkYear->bind_param("i", $year_id);
 $checkYear->execute();
 $result = $checkYear->get_result();
 
-// If year does not exist, create it automatically
 if ($result->num_rows == 0) {
-    // If no year_from and year_to are provided, generate dummy values
     if (!$year_from || !$year_to) {
-        $year_from = date("Y");          // current year
-        $year_to   = $year_from + 1;     // next year
+        $year_from = date("Y");         
+        $year_to   = $year_from + 1;    
     }
 
     $insertYear = $conn->prepare("INSERT INTO year_tbl (year_id, year_from, year_to) VALUES (?, ?, ?)");
@@ -29,7 +26,6 @@ if ($result->num_rows == 0) {
     }
 }
 
-// Auto-generate sem_name if empty
 if (empty($sem_name)) {
     $check = $conn->prepare("SELECT COUNT(*) as count FROM semester_tbl WHERE year_id = ?");
     $check->bind_param("i", $year_id);
@@ -39,7 +35,6 @@ if (empty($sem_name)) {
     $sem_name = "Semester " . $nextNum;
 }
 
-// Insert semester
 $stmt = $conn->prepare("INSERT INTO semester_tbl (sem_name, year_id) VALUES (?, ?)");
 $stmt->bind_param("si", $sem_name, $year_id);
 

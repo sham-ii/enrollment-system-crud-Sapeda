@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 19, 2025 at 11:26 AM
+-- Generation Time: Sep 19, 2025 at 11:57 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `enrollment_db`
+-- Database: `enroll_db`
 --
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `enrollment_tbl` (
 
 CREATE TABLE `institute_tbl` (
   `ins_id` int NOT NULL,
-  `ins_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `ins_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -67,7 +67,7 @@ INSERT INTO `institute_tbl` (`ins_id`, `ins_name`) VALUES
 
 CREATE TABLE `program_tbl` (
   `program_id` int NOT NULL,
-  `program_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `program_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ins_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -91,7 +91,7 @@ INSERT INTO `program_tbl` (`program_id`, `program_name`, `ins_id`) VALUES
 
 CREATE TABLE `semester_tbl` (
   `sem_id` int NOT NULL,
-  `sem_name` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `sem_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `year_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -140,8 +140,8 @@ INSERT INTO `student_load` (`load_id`, `stud_id`, `subject_id`) VALUES
 CREATE TABLE `student_tbl` (
   `stud_id` int NOT NULL,
   `last_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `first_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `mid_init` varchar(5) COLLATE utf8mb4_general_ci NOT NULL,
+  `first_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `mid_init` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `program_id` int DEFAULT NULL,
   `allowance` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -170,7 +170,7 @@ INSERT INTO `student_tbl` (`stud_id`, `last_name`, `first_name`, `mid_init`, `pr
 
 CREATE TABLE `subject_tbl` (
   `subject_id` int NOT NULL,
-  `subject_name` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `subject_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `sem_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

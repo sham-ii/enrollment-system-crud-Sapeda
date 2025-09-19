@@ -3,7 +3,7 @@ include "../db.php";
 
 $result = $conn->query("
     SELECT s.stud_id, s.last_name, s.first_name, s.mid_init,
-           s.program_id, p.program_name, s.allowance
+           p.program_id, s.allowance
     FROM student_tbl s
     LEFT JOIN program_tbl p ON s.program_id = p.program_id
 ");
